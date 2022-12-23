@@ -46,6 +46,7 @@ const getOtpText = () => {
 const verifyOTP = () => {
         let flags = false;
         const text = getOtpText();
+        console.log(text);
         data.forEach(async (x) => {
             if (text == x.data().code&&x.data().flag=="1") {
                 console.log(x.id);

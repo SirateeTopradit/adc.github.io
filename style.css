@@ -20,6 +20,7 @@ model-viewer {
 
 body,
 html {
+    font-family: 'prompt';
     width: 100%;
     background: linear-gradient(185deg, #e73c7e1e 0, #23d5ab09 58%);
     scroll-behavior: smooth;
@@ -58,11 +59,11 @@ p:first-letter {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 48px;
 }
 
 p {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .textShineBlack {
@@ -111,7 +112,7 @@ p {
     padding: 10px 16px;
     position: relative;
     text-align: center;
-    font-size: 24px;
+    font-size: 16px;
     text-decoration: none;
     transition: color 100ms;
     vertical-align: baseline;

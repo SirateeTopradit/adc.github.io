@@ -68,10 +68,12 @@ const verifyOTP = () => {
 
         if (flags) {
             alert(`Your OTP is "${text}". OTP is correct`);
+            location.reload();
         } else {
             alert(`no`);
+            location.reload();
         }
-        // location.reload();
+        
 };
 
 

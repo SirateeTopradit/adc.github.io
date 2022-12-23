@@ -77,10 +77,10 @@ const verifyOTP = async () => {
     } else {
         alert(`no`);
     }
-    // setTimeout(() => {
-    //     console.log("delay");
-    //     location.reload();
-    // }, 1000);
+    setTimeout(() => {
+        console.log("delay");
+        location.reload();
+    }, 1000);
 };
 
 verifyBtn.addEventListener("click", () => {

@@ -6,7 +6,15 @@ import {
     doc,
     updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
-import { getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import {
+    getDatabase,
+    ref,
+    set,
+    child,
+    update,
+    remove,
+    onValue,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -33,7 +41,7 @@ async function getData(db) {
     return empSnapshot;
 }
 
-const data = await getData(db);
+
 
 const verifyBtn = document.querySelector("#verify-btn");
 
@@ -43,45 +51,38 @@ const getOtpText = () => {
     return text;
 };
 
-const verifyOTP = () => {
-        let flags = false;
-        const text = getOtpText();
-        console.log(text);
-        data.forEach(async (x) => {
-            if (text == x.data().code&&x.data().flag=="1") {
-                console.log(x.id);
-                flags = true;
+const verifyOTP = async () => {
+    const data = await getData(db);
+    let flags = false;
+    const text = getOtpText();
+    console.log(text);
+    data.forEach(async (x) => {
+        console.log(x.data().code);
+        if (text == x.data().code && x.data().flag == "1") {
+            console.log(x.id);
+            flags = true;
 
-                await updateDoc(doc(db, "Code", x.id), {
-                    flag: "0",
-                });
-
-                await updateDoc(doc(db, "esp", "o"), {
-                    io: x.data().io,
-                    flag: "1",
-                });
-                set(ref(rtdb, 'o/'), {
-                    io: x.data().io,
-                    flag: "1",
-                });
-            }
-        });
-
-        if (flags) {
-            alert(`Your OTP is "${text}". OTP is correct`);
-            location.reload();
-        } else {
-            alert(`no`);
-            location.reload();
+            await updateDoc(doc(db, "Code", x.id), {
+                flag: "0",
+            });
+            set(ref(rtdb, "o/"), {
+                io: x.data().io,
+                flag: "1",
+            });
         }
-        
+    });
+
+    if (flags) {
+        alert(`Your OTP is "${text}". OTP is correct`);
+    } else {
+        alert(`no`);
+    }
+    // setTimeout(() => {
+    //     console.log("delay");
+    //     location.reload();
+    // }, 1000);
 };
 
-
-
 verifyBtn.addEventListener("click", () => {
-    
     verifyOTP();
 });
-
-

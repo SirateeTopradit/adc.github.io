@@ -20,7 +20,7 @@ model-viewer {
 
 body,
 html {
-    font-family: 'prompt';
+    font-family: "prompt";
     width: 100%;
     background: linear-gradient(185deg, #e73c7e1e 0, #23d5ab09 58%);
     scroll-behavior: smooth;
@@ -138,7 +138,7 @@ p {
 
 /* code */
 .container {
-    height: 100vh;
+    height: 120vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -329,4 +329,19 @@ p {
     height: 100%;
     border-radius: 6px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px 0px;
+    background: rgb(0, 0, 15);
+    border-top: aliceblue 5px solid;
+    color: white;
 }

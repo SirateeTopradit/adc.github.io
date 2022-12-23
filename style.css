@@ -1,0 +1,331 @@
+@font-face {
+    font-family: "prompt";
+    src: url(../font/Prompt/Prompt-Medium.ttf);
+    font-weight: normal;
+    font-style: normal;
+    font-family: "prompt";
+}
+
+model-viewer {
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    background: linear-gradient(185deg, #e73c7e1e 0, #23d5ab09 58%);
+    scroll-behavior: smooth;
+}
+
+.bg {
+    /*C:\Users\NMRTUP_04\Documents\ProjectCode\kiosk\image\6604090.gif*/
+    background-image: url("image/6604090.gif");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    color: white;
+}
+
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
+
+.col {
+    width: 50%;
+    text-shadow: 0px 0px 10px black;
+}
+
+p:first-letter {
+    margin-left: 3em;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p {
+    font-size: 24px;
+}
+
+.textShineBlack {
+    font-weight: bold;
+    background: linear-gradient(
+        -45deg,
+        #ffd9cd 0%,
+        #f7b7cf 30%,
+        #b9e9fa 40%,
+        #b1f5e5 50%,
+        #b9e9fa 70%,
+        #f7b7cf 80%,
+        #ffd9cd 100%
+    );
+    animation: shine 5s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    text-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* button */
+.btn-2 {
+    background-color: transparent !important;
+}
+.button-1 {
+    background-color: #941709;
+    border-radius: 50px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 30%;
+    height: 5rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.button-1:hover,
+.button-1:focus {
+    background-color: #c91c0e;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+/* code */
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-2 {
+    text-align: center;
+}
+.title {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+#otp-form {
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+}
+#otp-form input {
+    border: none;
+    background-color: #121517;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    max-width: 70px;
+    height: 70px;
+    border-radius: 4px;
+    outline: 2px solid rgb(66, 66, 66);
+}
+#otp-form input:focus-visible {
+    outline: 2px solid royalblue;
+}
+#otp-form input.filled {
+    outline: 2px solid rgb(7, 192, 99);
+}
+#verify-btn {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 30px;
+    background: royalblue;
+    color: white;
+    padding: 24px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+}
+
+.keyboard {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background: black;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: bottom 0.4s;
+}
+
+.keyboard--hidden {
+    bottom: -100%;
+}
+
+.keyboard__keys {
+    text-align: center;
+}
+
+.keyboard__key {
+    height: 45px;
+    width: 6%;
+    max-width: 90px;
+    margin: 3px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.05rem;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+.keyboard__key:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.keyboard__key--wide {
+    width: 12%;
+}
+
+.keyboard__key--extra-wide {
+    width: 36%;
+    max-width: 500px;
+}
+
+.keyboard__key--activatable::after {
+    content: "";
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+    background: #08ff00;
+}
+
+.keyboard__key--dark {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.form {
+    position: relative;
+    padding: 50px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.input-box {
+    position: relative;
+    width: 350px;
+}
+
+.input-box input {
+    position: relative;
+    padding: 8px 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1.25rem;
+    letter-spacing: 0.05rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.input-box span {
+    position: absolute;
+    left: 0;
+    padding: 10px 0;
+    pointer-events: none;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    color: #333;
+    transition: 0.5s;
+}
+
+.input-box input:valid ~ span,
+.input-box input:focus ~ span {
+    font-size: 0.85rem;
+    transform: translateY(-32px);
+}
+
+.input-box i {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 1.5px;
+    background: linear-gradient(45deg, #2196f3, #ff4685);
+    transition: 0.5s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.input-box input:valid ~ i,
+.input-box input:focus ~ i {
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+}

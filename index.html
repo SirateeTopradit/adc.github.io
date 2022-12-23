@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Website</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        />
+        <script
+            type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></script>
+        
+    </head>
+    <body>
+        <!-- <h1>Welcome to my website!</h1>
+        <p>Here is some content on my website.</p>
+        <button onclick="sayHello()">Click me</button> -->
+        <!-- &nbsp;<img
+                                    src="./image/hi.gif"
+                                    style="height: 15px"
+                            /></small> -->
+
+        <section>
+            <div class="bg">
+                <div class="landing">
+                    <div class="col">
+                        <div class="text1">
+                            <h1>ตู้จ่ายยาสามัญประจำบ้าน</h1>
+                        </div>
+                        <div class="text2 textShineBlack">
+                            <p>
+                                ฮ่องเต้ แจ็กพ็อตรันเวย์สุริยยาตร์
+                                ม้าหินอ่อนเพนตากอน
+                                เซ็นทรัลรีเสิร์ชเอาท์ดอร์เจี๊ยวคาร์โก้
+                                เซ็กส์สเก็ตช์ ดีลเลอร์ผลักดัน วันเวย์
+                                เบอร์รีโรแมนติคบร็อกโคลีม็อบ รามเทพคอนเฟิร์ม
+                                ซีดานกรอบรูปแคร์ จิ๊กโก๋ บูติกผ้าห่ม
+                                ซิตีสุริยยาตร์มาราธอนคอร์ปอเรชั่นซานตาคลอส
+                                สเตริโอกาญจนาภิเษกเกมส์สตูดิโอ ซีรีส์
+                                ล็อตโอเคผ้าห่มอัลบัม
+                            </p>
+                        </div>
+                        <div class="btn">
+                            <button class="button-1 bgShineBlack" role="button" onclick="window.location.href='#section2';">
+                                เริ่มต้นใช้งาน
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="robot">
+                        <model-viewer
+                            id="paused-change-demo"
+                            camera-controls
+                            touch-action="pan-y"
+                            autoplay
+                            disable-zoom
+                            animation-name="Running"
+                            ar
+                            Pobrfill
+                            :focus-visible
+                            ar-modes="webxr scene-viewer"
+                            shadow-intensity="1"
+                            src="./image/RobotExpressive.glb"
+                            alt="An animated 3D model of a robot"
+                        ></model-viewer>
+                        <script>
+                            (() => {
+                                const modelViewer = document.querySelector(
+                                    "#paused-change-demo"
+                                );
+
+                                self.setInterval(() => {
+                                    modelViewer.animationName =
+                                        modelViewer.animationName === "Running"
+                                            ? "Wave"
+                                            : "Running";
+                                }, 1500.0);
+                            })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container" id="section2">
+                <div class="col-2">
+                    <h1 class="title">ใส่รหัส</h1>
+                    <div class="form">
+                        <div class="input-box">
+                            <input
+                                class="use-keyboard-input"
+                                type="text"
+                                id="1234"
+                                required
+                            />
+                            <span>รหัส</span>
+                            <i></i>
+                        </div>
+                    </div>
+                    <button id="verify-btn">Verify</button>
+                </div>
+            </div>
+        </section>
+        <!-- use-keyboard-input -->
+        <script src="index.js " type="module"></script>
+        <script src="Keyboard.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+    </body>
+</html>

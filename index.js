@@ -48,6 +48,7 @@ const verifyBtn = document.querySelector("#verify-btn");
 const getOtpText = () => {
     let text = "";
     text = document.getElementById("1234").value;
+    document.getElementById("1234").value = "";
     return text;
 };
 
@@ -77,10 +78,10 @@ const verifyOTP = async () => {
     } else {
         alert(`no`);
     }
-    setTimeout(() => {
-        console.log("delay");
-        location.reload();
-    }, 1000);
+    // setTimeout(() => {
+    //     console.log("delay");
+    //     location.reload();
+    // }, 1000);
 };
 
 verifyBtn.addEventListener("click", () => {
